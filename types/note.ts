@@ -1,9 +1,14 @@
 export const noteTags = [
-  'Todo',
   'Work',
   'Personal',
   'Meeting',
   'Shopping',
+  'Ideas',
+  'Travel',
+  'Finance',
+  'Health',
+  'Important',
+  'Todo',
 ] as const;
 
 export type NoteTag = (typeof noteTags)[number];

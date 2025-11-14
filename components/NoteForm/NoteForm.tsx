@@ -139,11 +139,11 @@ function NoteForm() {
                 }
               }}
             >
-              <option value="Todo">Todo</option>
-              <option value="Work">Work</option>
-              <option value="Personal">Personal</option>
-              <option value="Meeting">Meeting</option>
-              <option value="Shopping">Shopping</option>
+              {noteTags.map(tag => (
+                <option key={tag} value={tag}>
+                  {tag}
+                </option>
+              ))}
             </Field>
             <ErrorMessage name="tag" component="span" className={css.error} />
           </div>
