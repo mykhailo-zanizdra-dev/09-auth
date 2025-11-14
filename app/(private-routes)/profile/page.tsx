@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Profile - NoteHub',
     description:
       'Your personal profile page on NoteHub. View and edit your account information here.',
-    url: `http://localhost:3000/profile`, // TODO: replace with your domain
+    url: `https://09-auth-two-flame.vercel.app/profile`,
     siteName: 'NoteHub',
     images: [
       {
