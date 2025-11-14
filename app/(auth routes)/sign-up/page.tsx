@@ -9,6 +9,7 @@ import { UserCredentials } from '@/types/user';
 import { useMutation } from '@tanstack/react-query';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import useAuthStore from '@/lib/store/authStore';
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string()
@@ -26,11 +27,13 @@ const initialValues: UserCredentials = {
 
 function SignUpPage() {
   const router = useRouter();
+  const { setUser } = useAuthStore();
   const [error, setError] = useState('');
 
   const { mutate: registerMutation, isPending } = useMutation({
     mutationFn: (credentials: UserCredentials) => register(credentials),
-    onSuccess: () => {
+    onSuccess: user => {
+      setUser(user);
       router.push('/profile');
     },
     onError: (error: ApiError) => {

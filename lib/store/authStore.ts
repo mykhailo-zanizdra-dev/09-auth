@@ -3,7 +3,7 @@ import { User } from '@/types/user';
 
 type AuthStore = {
   isAuthenticated: boolean;
-  user?: User | null;
+  user: User | null;
   setUser: (user: User) => void;
   clearIsAuthenticated: () => void;
 };
