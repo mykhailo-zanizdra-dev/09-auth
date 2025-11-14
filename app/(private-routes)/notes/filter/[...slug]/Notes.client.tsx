@@ -6,14 +6,13 @@ import NoteList from '@/components/NoteList/NoteList';
 import Pagination from '@/components/Pagination/Pagination';
 import SearchBox from '@/components/SearchBox/SearchBox';
 import QUERY_KEYS from '@/const/queryKeys';
-import { fetchNotes } from '@/lib/api';
-import { keepPreviousData } from '@tanstack/react-query';
+import { fetchNotes } from '@/lib/api/clientApi';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
 import { ChangeEvent, useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useDebouncedCallback } from 'use-debounce';
-import { useQuery } from '@tanstack/react-query';
 import css from './Notes.module.css';
-import Link from 'next/link';
 
 interface NotesClientProps {
   filter?: string;

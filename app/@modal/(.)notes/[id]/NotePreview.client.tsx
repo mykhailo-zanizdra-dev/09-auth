@@ -1,12 +1,12 @@
 'use client';
+import Loader from '@/components/Loader/Loader';
 import QUERY_KEYS from '@/const/queryKeys';
-import { fetchNoteById } from '@/lib/api';
+import { fetchNoteById } from '@/lib/api/clientApi';
 import { useQuery } from '@tanstack/react-query';
 import { useParams, useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import Modal from '../../../../components/Modal/Modal';
 import css from './NotePreview.module.css';
-import Loader from '@/components/Loader/Loader';
 
 function NotePreviewClient() {
   const { id } = useParams<{ id: string }>();

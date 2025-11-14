@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import toast from 'react-hot-toast';
+import QUERY_KEYS from '@/const/queryKeys';
+import { deleteNote } from '@/lib/api/clientApi';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 import type { Note } from '../../types/note';
 import Spinner from '../Spinner/Spinner';
 import css from './NoteList.module.css';
-import QUERY_KEYS from '@/const/queryKeys';
-import { deleteNote } from '@/lib/api';
 
 interface NoteListProps {
   notes: Note[];

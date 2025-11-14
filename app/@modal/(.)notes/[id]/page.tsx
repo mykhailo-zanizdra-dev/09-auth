@@ -1,6 +1,6 @@
 import NotePreview from '@/app/@modal/(.)notes/[id]/NotePreview.client';
 import QUERY_KEYS from '@/const/queryKeys';
-import { fetchNoteById } from '@/lib/api';
+import { fetchNoteById } from '@/lib/api/clientApi';
 import {
   dehydrate,
   HydrationBoundary,

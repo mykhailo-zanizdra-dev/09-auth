@@ -2,9 +2,9 @@ interface FilteredNotesProps {
   params: Promise<{ slug: string[] }>;
 }
 
-import NotesClient from '@/app/notes/filter/[...slug]/Notes.client';
+import NotesClient from '@/app/(private-routes)/notes/filter/[...slug]/Notes.client';
 import QUERY_KEYS from '@/const/queryKeys';
-import { fetchNotes } from '@/lib/api';
+import { fetchServerNotes } from '@/lib/api/serverApi';
 import {
   dehydrate,
   HydrationBoundary,
@@ -44,7 +44,7 @@ async function FilteredNotes({ params }: FilteredNotesProps) {
 
   await queryClient.prefetchQuery({
     queryKey: [QUERY_KEYS.NOTES, '', 1, filter],
-    queryFn: () => fetchNotes({ page: 1, search: '', tag: filter }),
+    queryFn: () => fetchServerNotes({ page: 1, search: '', tag: filter }),
   });
 
   return (
