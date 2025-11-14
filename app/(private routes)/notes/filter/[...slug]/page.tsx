@@ -2,7 +2,7 @@ interface FilteredNotesProps {
   params: Promise<{ slug: string[] }>;
 }
 
-import NotesClient from '@/app/(private-routes)/notes/filter/[...slug]/Notes.client';
+import NotesClient from '@/app/(private routes)/notes/filter/[...slug]/Notes.client';
 import QUERY_KEYS from '@/const/queryKeys';
 import { fetchServerNotes } from '@/lib/api/serverApi';
 import {
